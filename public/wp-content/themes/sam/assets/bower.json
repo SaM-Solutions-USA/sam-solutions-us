@@ -1,0 +1,16 @@
+{
+  "name": "kia",
+  "description": "blog",
+  "main": "app.js",
+  "authors": [
+    "dizzain.team"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/dizzain/kia-theme",
+  "dependencies": {
+    "sticky-kit": "^1.1.2"
+  },
+  "devDependencies": {
+
+  }
+}

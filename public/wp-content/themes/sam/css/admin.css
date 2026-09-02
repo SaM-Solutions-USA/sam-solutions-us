@@ -1,0 +1,19 @@
+.acf-postbox#acf-group_65c61ac534d3e {
+	display: none !important;
+}
+
+.acf-field-flexible-content[data-name="block_set"] .acf-flexible-content .layout:has(.acf-field[data-name="active"] label.selected) > .acf-fc-layout-handle {
+    opacity: 1;
+}
+
+.acf-field-flexible-content[data-name="block_set"] .acf-flexible-content .layout:has(.acf-field[data-name="active"] label) > .acf-fc-layout-handle {
+    opacity: 0.5;
+}
+
+.acf-field-flexible-content[data-name="case-studies_block_set"] .acf-flexible-content .layout:has(.acf-field[data-name="active"] label.selected) > .acf-fc-layout-handle {
+    opacity: 1;
+}
+
+.acf-field-flexible-content[data-name="case-studies_block_set"] .acf-flexible-content .layout:has(.acf-field[data-name="active"] label) > .acf-fc-layout-handle {
+    opacity: 0.5;
+}

@@ -1,0 +1,21 @@
+User-agent: *
+Disallow: /wp-admin/
+Disallow: /cgi-bin/
+Disallow: /?
+#Disallow: /wp-/
+#Disallow: /wp/
+Disallow: /*?s=/
+Disallow: /*index_ajax.php
+Disallow: /*&s=/
+Disallow: /search/
+Disallow: /users/
+Disallow: /*/trackback/
+Disallow: /*/feed/
+Disallow: /*/rss/
+Disallow: /*/wlwmanifest.xml
+Disallow: /xmlrpc.php
+Disallow: /*utm*=/
+Disallow: /*openstat=/
+Disallow: /wp-content/plugins/
+
+Sitemap: https://sam-solutions.us/sitemap_index.xml

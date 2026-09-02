@@ -1,0 +1,87 @@
+.edit-post-visual-editor .block-editor-block-list__layout .request {
+    display: -ms-flexbox;
+    display: flex;
+    padding: 49px 40px;
+    background-color: #111b3b;
+    margin-bottom: 8px;  
+}
+
+.edit-post-visual-editor .block-editor-block-list__layout .request__base {
+    -ms-flex: 1;
+    flex: 1;
+}
+
+.edit-post-visual-editor .block-editor-block-list__layout .request__title {
+    color: #fff;
+    font-size: 24px;
+    line-height: 1.16667;
+    font-weight: 700;
+}
+
+.edit-post-visual-editor .block-editor-block-list__layout .request__desc {
+    margin-top: 11px;
+    font-size: 18px;
+    line-height: 1.44444;
+    color: #ededed;
+}
+
+.edit-post-visual-editor .block-editor-block-list__layout .prime__btn {
+    margin-top: 35px;
+}
+
+.edit-post-visual-editor .block-editor-block-list__layout .btn {
+    padding: 15px 50px 13px;
+    margin: 0;
+    border: 0;
+    color: inherit;
+    background-color: transparent;
+    outline: 0;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    border-radius: 4px;
+    font-family: "Share Tech Mono",monospace;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 1;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-decoration: none;
+    text-align: center;
+}
+
+.edit-post-visual-editor .block-editor-block-list__layout .btn_size_middle {
+    padding: 15px 40px 12px;
+}
+
+.edit-post-visual-editor .block-editor-block-list__layout .btn_type_color {
+    text-transform: uppercase;
+    color: #ededed;
+    background: linear-gradient(50deg,#5e45c3 15%,#7c43c9 75%);
+}
+
+.edit-post-visual-editor .block-editor-block-list__layout .request__side {
+    margin-left: 47px;
+    width: 190px;
+}
+
+.edit-post-visual-editor .block-editor-block-list__layout .request__base--non-svg {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+}
+
+.edit-post-visual-editor .block-editor-block-list__layout .request__inner--non-svg {
+    width: 65%;
+    padding-right: 30px;
+    box-sizing: border-box;
+}
+
+.edit-post-visual-editor .block-editor-block-list__layout .prime__btn--non-svg {
+    margin-top: 0px;
+}
+
+.edit-post-visual-editor .block-editor-block-list__layout .request__inner--non-svg .request__desc {
+    margin-top: 0px;
+}

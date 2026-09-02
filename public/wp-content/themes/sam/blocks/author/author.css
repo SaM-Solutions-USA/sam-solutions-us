@@ -1,0 +1,18 @@
+.edit-post-visual-editor .block-editor-block-list__layout .author-block .quote_alt .quote__author {
+    display: block;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.4;
+    font-style: normal;
+    overflow-wrap: break-word;
+}
+
+.edit-post-visual-editor .block-editor-block-list__layout .author-block .quote_alt .quote__position {
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 1.45;
+    max-width: 400px;
+    font-weight: 500;
+    color: #6b6f71;
+    overflow-wrap: break-word;
+}

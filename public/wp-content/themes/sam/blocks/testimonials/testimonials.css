@@ -1,0 +1,73 @@
+.block-editor-block-list__block .quote:not(:first-child) {
+    margin-top: 25px;
+}
+
+.block-editor-block-list__block .quote_alt {
+    border-left: none;
+    padding-bottom: 10px;
+}
+
+.block-editor-block-list__block .quote {
+    display: block;
+    margin-bottom: 40px;
+}
+
+.block-editor-block-list__block .quote_alt .quote__content {
+    border-left: 1px solid #c1c5d2;
+}
+
+.block-editor-block-list__block .quote__content {
+    font-size: 24px;
+    line-height: 1.5;
+    padding-top: 15px;
+    padding-bottom: 20px;
+}
+
+.block-editor-block-list__block .quote__cite, .quote__content {
+    padding-left: 30px;
+}
+
+.block-editor-block-list__block .quote p {
+    font-weight: 400;
+}
+
+.block-editor-block-list__block .content ol:last-child, .content p:last-child, .content ul:last-child {
+    margin-bottom: 0;
+}
+
+.block-editor-block-list__block .quote_alt .quote__cite {
+    margin-top: 20px;
+    padding-left: 0;
+}
+
+.block-editor-block-list__block .quote__cite {
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.block-editor-block-list__block .quote_alt .quote__pic {
+    max-width: 107px;
+    max-height: 107px;
+    border-radius: 0;
+    background-color: transparent;
+    margin-right: 15px;
+}
+
+.block-editor-block-list__block .quote__base {
+    flex: 1;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.block-editor-block-list__block .quote_alt .quote__position {
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 1.45;
+    max-width: 400px;
+}
+
+.block-editor-block-list__block blockquote {
+    margin: 0px;
+}

@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head><meta charset="UTF-8">
+
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="//www.googletagmanager.com" crossorigin>
+    <link rel="preconnect" href="//www.google-analytics.com" crossorigin> 
+
+	<link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/sam/fonts/Montserrat/Montserrat-latin-regular.woff2" crossorigin>
+	<link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/sam/fonts/Montserrat/Montserrat-latin-medium.woff2" crossorigin>
+	<link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/sam/fonts/Montserrat/Montserrat-latin-bold.woff2" crossorigin>
+	<link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/sam/fonts/Share-Tech-Mono/Share-Tech-Mono-latin-regular.woff2" crossorigin>
+	<link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/sam/fonts/Share-Tech/Share-Tech-latin-regular.woff2" crossorigin>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/wp-content/themes/sam/img/favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/wp-content/themes/sam/img/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/wp-content/themes/sam/img/favicons/favicon-16x16.png">
+	<link rel="manifest" href="/wp-content/themes/sam/img/favicons/site.webmanifest">
+	<link rel="mask-icon" href="/wp-content/themes/sam/img/favicons/safari-pinned-tab.svg" color="#275bca">
+	<link rel="shortcut icon" href="/wp-content/themes/sam/img/favicons/favicon.ico">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="msapplication-config" content="/wp-content/themes/sam/img/favicons/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+ 
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag() {
+		dataLayer.push(arguments);
+	}
+	gtag("consent", "default", {
+		ad_user_data: "denied",
+		ad_personalization: "denied",
+		ad_storage: "denied",
+		analytics_storage: "denied",
+		functionality_storage: "denied",
+		personalization_storage: "denied",
+		security_storage: "granted",
+		wait_for_update: 500,
+	});
+	gtag("set", "ads_data_redaction", true);
+	</script>
+<script type="text/javascript"
+		id="Cookiebot"
+		src="https://consent.cookiebot.com/uc.js"
+		data-cbid="b04ec15e-dc89-4c1b-8789-daa729266c71"
+							async	></script>
+
+<!-- Search Engine Optimization by Rank Math PRO - https://rankmath.com/ -->
+<title>Azure AD B2C Tutorial: Authenticating In Sitecore Via Azure</title>
+<meta name="description" content="This Azure AD B2C Tutorial provides a detailed explanation on how to authenticate in Sitecore via Azure. Written by one of our in-house Sitecore architects.">
+<meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
+<link rel="canonical" href="/insights/azure-ad-b2c-tutorial-how-to-authenticate-in-sitecore-via-azure/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Azure AD B2C Tutorial: How To Authenticate In Sitecore Via Azure">
+<meta property="og:description" content="This Azure AD B2C Tutorial provides an in-depth explanation on how to Authenticate in Sitecore via Azure.">
+<meta property="og:url" content="/insights/azure-ad-b2c-tutorial-how-to-authenticate-in-sitecore-via-azure/">
+<meta property="og:site_name" content="SaM Solutions">
+<meta property="article:publisher" content="https://www.facebook.com/SaMSolutionsUS/">
+<meta property="article:section" content="Blog">
+<meta property="og:updated_time" content="2024-12-08T19:31:21+00:00">
+<meta property="og:image" content="/wp-content/uploads/Azure-AD-B2C-Tutorial.png">
+<meta property="og:image:secure_url" content="/wp-content/uploads/Azure-AD-B2C-Tutorial.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="629">
+<meta property="og:image:alt" content="Azure AD B2C Tutorial">
+<meta property="og:image:type" content="image/png">
+<meta property="article:published_time" content="2020-05-04T10:05:51.912Z">
+<meta property="article:modified_time" content="2021-03-25T10:05:52.097Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Azure AD B2C Tutorial: How To Authenticate In Sitecore Via Azure">
+<meta name="twitter:description" content="This Azure AD B2C Tutorial provides an in-depth explanation on how to Authenticate in Sitecore via Azure.">
+<meta name="twitter:site" content="@https://twitter.com/SaMSolutionsUS">
+<meta name="twitter:creator" content="@https://twitter.com/SaMSolutionsUS">
+<meta name="twitter:image" content="/wp-content/uploads/Azure-AD-B2C-Tutorial.png">
+<meta name="twitter:label1" content="Written by">
+<meta name="twitter:data1" content="admin">
+<meta name="twitter:label2" content="Time to read">
+<meta name="twitter:data2" content="11 minutes">
+<script type="application/ld+json" class="rank-math-schema-pro">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"/#organization","name":"SaM Solutions USA, Inc.","sameAs":["https://www.facebook.com/SaMSolutionsUS/","https://twitter.com/https://twitter.com/SaMSolutionsUS"],"logo":{"@type":"ImageObject","@id":"/#logo","url":"/wp-content/uploads/SaMSolutions_Logo-Light-transparent.png","contentUrl":"/wp-content/uploads/SaMSolutions_Logo-Light-transparent.png","caption":"SaM Solutions USA, Inc.","inLanguage":"en-US","width":"1940","height":"980"}},{"@type":"WebSite","@id":"/#website","url":"https://sam-solutions.us","name":"SaM Solutions USA, Inc.","publisher":{"@id":"/#organization"},"inLanguage":"en-US"},{"@type":"ImageObject","@id":"/wp-content/uploads/Azure-AD-B2C-Tutorial-min.jpg","url":"/wp-content/uploads/Azure-AD-B2C-Tutorial-min.jpg","width":"1200","height":"629","caption":"Azure AD B2C Tutorial","inLanguage":"en-US"},{"@type":"WebPage","@id":"/insights/azure-ad-b2c-tutorial-how-to-authenticate-in-sitecore-via-azure/#webpage","url":"/insights/azure-ad-b2c-tutorial-how-to-authenticate-in-sitecore-via-azure/","name":"Azure AD B2C Tutorial: Authenticating In Sitecore Via Azure","datePublished":"2020-05-04T15:34:17+00:00","dateModified":"2024-12-08T19:31:21+00:00","isPartOf":{"@id":"/#website"},"primaryImageOfPage":{"@id":"/wp-content/uploads/Azure-AD-B2C-Tutorial-min.jpg"},"inLanguage":"en-US"},{"@type":"Organization","name":"SaM Solutions USA, Inc.","url":"https://sam-solutions.us","logo":"/wp-content/uploads/SaMSolutions_Logo-Light-transparent.png","description":"SaM Solutions focuses on IT consulting and custom software engineering services.","address":{"@type":"PostalAddress","streetAddress":"1 Edgewater Drive, Suite 108","addressLocality":"Norwood","addressRegion":"MA","postalCode":"02062","addressCountry":"United States"},"contactPoint":{"@type":"ContactPoint","telephone":"+1 (857) 777-6073","contactType":"Sales"},"sameAs":["https://www.facebook.com/SaMSolutionsUS/","https://www.instagram.com/sam_solutions_usa/","https://www.linkedin.com/company/samsolutionsusa/","https://twitter.com/SaMSolutionsUS","https://www.youtube.com/channel/UC4HYjtWHUQYhU4PN5f54JmA"]},{"@type":"Article","image":["/wp-content/uploads/pasted-image-0-min.png"],"url":"/insights/azure-ad-b2c-tutorial-how-to-authenticate-in-sitecore-via-azure/","dateCreated":"2020-05-04T10:05:51.912Z","datePublished":"2020-05-04T10:05:51.912Z","dateModified":"2021-03-25T10:05:52.097Z","headline":"Azure AD B2C Tutorial: Authenticating In Sitecore Via Azure","name":"Azure AD B2C Tutorial: Authenticating In Sitecore Via Azure","description":"This Azure AD B2C Tutorial provides a detailed explanation on how to authenticate in Sitecore via Azure. Written by one of our in-house Sitecore architects.","keywords":["azure b2c tutorial","sitecore 9 identity server","azure ad b2c tutorial","sitecore tutorial","it var b2c solutions","sitecore sap connector","sitecore azure","sitecore 8.2 azure"],"author":{"@type":"Person","name":"Vadim Gusev","url":"https://gitvadim.github.io/"},"creator":["SaM Solutions USA, Inc."],"publisher":{"@type":"Organization","name":"SaM Solutions USA, Inc.","logo":{"@type":"ImageObject","url":"/wp-content/uploads/SaMSolutions_Logo-Light-transparent.png"},"url":"/"},"mainEntityOfPage":"/insights/azure-ad-b2c-tutorial-how-to-authenticate-in-sitecore-via-azure/","articleSection":"Blog, Sitecore"}]}</script>
+<!-- /Rank Math WordPress SEO plugin -->
+
+<style id="safe-svg-svg-icon-style-inline-css" type="text/css">
+.safe-svg-cover{text-align:center}.safe-svg-cover .safe-svg-inside{display:inline-block;max-width:100%}.safe-svg-cover svg{height:100%;max-height:100%;max-width:100%;width:100%}
+
+</style>
+<style id="acf-cta-style-inline-css" type="text/css">
+.edit-post-visual-editor .block-editor-block-list__layout .request {
+    display: -ms-flexbox;
+    display: flex;
+    padding: 49px 40px;
+    background-color: #111b3b;
+    margin-bottom: 8px;  
+}
+
+.edit-post-visual-editor .block-editor-block-list__layout .request__base {
+    -ms-flex: 1;
+    flex: 1;
+}
+
+.edit-post-visual-editor .block-editor-block-list__layout .request__title {
+    color: #fff;
+    font-size: 24px;
+    line-height: 1.16667;
+    font-weight: 700;
+}
+
+.edit-post-visual-editor .block-editor-block-list__layout .request__desc {
+    margin-top: 11px;
+    font-size: 18px;
+    line-height: 1.44444;
+    color: #ededed;
+}
+
+.edit-post-visual-editor .block-editor-block-list__layout .prime__btn {
+    margin-top: 35px;
+}
+
+.edit-post-visual-editor .block-editor-block-list__layout .btn {
+    padding: 15px 50px 13px;
+    margin: 0;
+    border: 0;
+    color: inherit;
+    background-color: transparent;
+    outline: 0;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    border-radius: 4px;
+    font-family: "Share Tech Mono",monospace;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 1;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-decoration: none;
+    text-align: center;
+}
+
+.edit-post-visual-editor .block-editor-block-list__layout .btn_size_middle {
+    padding: 15px 40px 12px;
+}
+
+.edit-post-visual-editor .block-editor-block-list__layout .btn_type_color {
+    text-transform: uppercase;
+    color: #ededed;
+    background: linear-gradient(50deg,#5e45c3 15%,#7c43c9 75%);
+}
+
+.edit-post-visual-editor .block-editor-block-list__layout .request__side {
+    margin-left: 47px;
+    width: 190px;
+}
+
+.edit-post-visual-editor .block-editor-block-list__layout .request__base--non-svg {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+}
+
+.edit-post-visual-editor .block-editor-block-list__layout .request__inner--non-svg {
+    width: 65%;
+    padding-right: 30px;
+    box-sizing: border-box;
+}
+
+.edit-post-visual-editor .block-editor-block-list__layout .prime__btn--non-svg {
+    margin-top: 0px;
+}
+
+.edit-post-visual-editor .block-editor-block-list__layout .request__inner--non-svg .request__desc {
+    margin-top: 0px;
+}
+</style>
+<style id="acf-faq-style-inline-css" type="text/css">
+.accordion__item:first-of-type {
+    border-top: 1px solid rgba(94,94,94,.2);
+}
+
+.accordion__item {
+    max-width: 100%;
+    border-bottom: 1px solid rgba(94,94,94,.2);
+}
+
+.accordion__item[open] {
+    padding-bottom: 30px;
+}
+
+.accordion__title {
+    font-family: 'Montserrat',sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 31px;
+    color: #000;
+    outline: 0;
+    cursor: pointer;
+    position: relative;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    list-style-type: none;
+}
+
+.accordion__content {
+    font-family: 'Montserrat',sans-serif;
+    font-size: 18px;
+    color: #333;
+    line-height: 26px;
+    font-weight: 500;
+}
+
+.accordion__item>.accordion__title:after {
+    position: absolute;
+    content: "";
+    width: 32px;
+    height: 32px;
+    background: url("/wp-content/themes/sam/blocks/faq/wp-content/themes/sam/img/cross.svg");
+    transform: rotate(0);
+    right: 15px;
+    transition: transform .4s;
+    top: 28px;
+    background-size: 100%;
+}
+
+.accordion__item[open]>.accordion__title:after {
+    display: block;
+    content:"";
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background: url("/wp-content/themes/sam/blocks/faq/wp-content/themes/sam/img/cross.svg");
+    right: 15px;
+    transform: rotate(-45deg);
+    background-size: 100%;
+}
+</style>
+<style id="acf-case-studies-style-inline-css" type="text/css">
+.edit-post-visual-editor .block-editor-block-list__block .case {
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 25px;
+    min-height: 310px;
+}
+
+.edit-post-visual-editor .block-editor-block-list__block .case__link {
+    display: block;
+    text-decoration: none;
+    color: #404040;
+}
+
+.edit-post-visual-editor .block-editor-block-list__block .case__top {
+    height: 90px;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.edit-post-visual-editor .block-editor-block-list__block .case__desc {
+    font-size: 18px;
+    line-height: 1.33333;
+    font-weight: 700;
+}
+
+.edit-post-visual-editor .block-editor-block-list__block .case__bottom {
+    min-height: 78px;
+    padding-top: 30px;
+    margin-top: auto;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    margin-left: -10px;
+}
+
+.edit-post-visual-editor .block-editor-block-list__block .case__tag {
+    text-decoration: none;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-family: "Share Tech Mono",monospace;
+    font-size: 17px;
+    line-height: 1.11765;
+    color: #1d41b5;
+}
+
+.edit-post-visual-editor .block-editor-block-list__block .grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.edit-post-visual-editor .block-editor-block-list__block .grid_cases {
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.edit-post-visual-editor .block-editor-block-list__block .grid_cases .grid__cell {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 33.33%;
+}
+
+
+</style>
+<style id="acf-testimonials-style-inline-css" type="text/css">
+.block-editor-block-list__block .quote:not(:first-child) {
+    margin-top: 25px;
+}
+
+.block-editor-block-list__block .quote_alt {
+    border-left: none;
+    padding-bottom: 10px;
+}
+
+.block-editor-block-list__block .quote {
+    display: block;
+    margin-bottom: 40px;
+}
+
+.block-editor-block-list__block .quote_alt .quote__content {
+    border-left: 1px solid #c1c5d2;
+}
+
+.block-editor-block-list__block .quote__content {
+    font-size: 24px;
+    line-height: 1.5;
+    padding-top: 15px;
+    padding-bottom: 20px;
+}
+
+.block-editor-block-list__block .quote__cite, .quote__content {
+    padding-left: 30px;
+}
+
+.block-editor-block-list__block .quote p {
+    font-weight: 400;
+}
+
+.block-editor-block-list__block .content ol:last-child, .content p:last-child, .content ul:last-child {
+    margin-bottom: 0;
+}
+
+.block-editor-block-list__block .quote_alt .quote__cite {
+    margin-top: 20px;
+    padding-left: 0;
+}
+
+.block-editor-block-list__block .quote__cite {
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.block-editor-block-list__block .quote_alt .quote__pic {
+    max-width: 107px;
+    max-height: 107px;
+    border-radius: 0;
+    background-color: transparent;
+    margin-right: 15px;
+}
+
+.block-editor-block-list__block .quote__base {
+    flex: 1;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.block-editor-block-list__block .quote_alt .quote__position {
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 1.45;
+    max-width: 400px;
+}
+
+.block-editor-block-list__block blockquote {
+    margin: 0px;
+}
+</style>
+<style id="acf-author-style-inline-css" type="text/css">
+.edit-post-visual-editor .block-editor-block-list__layout .author-block .quote_alt .quote__author {
+    display: block;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.4;
+    font-style: normal;
+    overflow-wrap: break-word;
+}
+
+.edit-post-visual-editor .block-editor-block-list__layout .author-block .quote_alt .quote__position {
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 1.45;
+    max-width: 400px;
+    font-weight: 500;
+    color: #6b6f71;
+    overflow-wrap: break-word;
+}
+</style>
+<style id="rank-math-related-posts-style-inline-css" type="text/css">
+.wp-block-rank-math-related-posts{--rm-related-gap: 1rem;--rm-related-border-radius: 6px;--rm-related-card-padding: 16px;--rm-related-hover-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);--rm-related-transition: 0.2s ease}.wp-block-rank-math-related-posts.rank-math-related-posts{display:block}.wp-block-rank-math-related-posts.rank-math-related-posts .rank-math-related-wrap{display:grid;gap:var(--rm-related-gap)}.wp-block-rank-math-related-posts.rank-math-related-posts.is-style-grid-vertical .rank-math-related-wrap,.wp-block-rank-math-related-posts.rank-math-related-posts.rank-math-related-grid-vertical .rank-math-related-wrap{grid-template-columns:repeat(auto-fill, minmax(220px, 1fr))}.wp-block-rank-math-related-posts.rank-math-related-posts.is-style-grid-horizontal .rank-math-related-wrap,.wp-block-rank-math-related-posts.rank-math-related-posts.rank-math-related-grid-horizontal .rank-math-related-wrap{grid-template-columns:repeat(auto-fill, minmax(400px, 1fr))}.wp-block-rank-math-related-posts.rank-math-related-posts.is-style-grid-horizontal .rank-math-related-item,.wp-block-rank-math-related-posts.rank-math-related-posts.rank-math-related-grid-horizontal .rank-math-related-item{display:flex;gap:16px;align-items:flex-start}.wp-block-rank-math-related-posts.rank-math-related-posts.is-style-grid-horizontal .rank-math-related-thumb,.wp-block-rank-math-related-posts.rank-math-related-posts.rank-math-related-grid-horizontal .rank-math-related-thumb{flex:0 0 140px;overflow:hidden}.wp-block-rank-math-related-posts.rank-math-related-posts.is-style-grid-horizontal .rank-math-related-thumb img,.wp-block-rank-math-related-posts.rank-math-related-posts.rank-math-related-grid-horizontal .rank-math-related-thumb img{width:140px;height:140px;-o-object-fit:cover;object-fit:cover}.wp-block-rank-math-related-posts.rank-math-related-posts.is-style-grid-horizontal .rank-math-related-content,.wp-block-rank-math-related-posts.rank-math-related-posts.rank-math-related-grid-horizontal .rank-math-related-content{flex:1;min-width:0;display:flex;flex-direction:column}.wp-block-rank-math-related-posts.rank-math-related-posts.is-style-grid-horizontal .rank-math-related-title,.wp-block-rank-math-related-posts.rank-math-related-posts.rank-math-related-grid-horizontal .rank-math-related-title{margin-top:0}@media (max-width: 640px){.wp-block-rank-math-related-posts.rank-math-related-posts.is-style-grid-horizontal .rank-math-related-wrap,.wp-block-rank-math-related-posts.rank-math-related-posts.rank-math-related-grid-horizontal .rank-math-related-wrap{grid-template-columns:1fr}.wp-block-rank-math-related-posts.rank-math-related-posts.is-style-grid-horizontal .rank-math-related-thumb,.wp-block-rank-math-related-posts.rank-math-related-posts.rank-math-related-grid-horizontal .rank-math-related-thumb{flex:0 0 100px}.wp-block-rank-math-related-posts.rank-math-related-posts.is-style-grid-horizontal .rank-math-related-thumb img,.wp-block-rank-math-related-posts.rank-math-related-posts.rank-math-related-grid-horizontal .rank-math-related-thumb img{width:100px;height:100px}}.wp-block-rank-math-related-posts.rank-math-related-posts.is-style-list-vertical .rank-math-related-wrap,.wp-block-rank-math-related-posts.rank-math-related-posts.rank-math-related-list-vertical .rank-math-related-wrap{grid-template-columns:1fr}.wp-block-rank-math-related-posts.rank-math-related-posts.is-style-list-horizontal .rank-math-related-wrap,.wp-block-rank-math-related-posts.rank-math-related-posts.rank-math-related-list-horizontal .rank-math-related-wrap{grid-template-columns:1fr}.wp-block-rank-math-related-posts.rank-math-related-posts.is-style-list-horizontal .rank-math-related-item,.wp-block-rank-math-related-posts.rank-math-related-posts.rank-math-related-list-horizontal .rank-math-related-item{display:flex;gap:20px;align-items:flex-start}.wp-block-rank-math-related-posts.rank-math-related-posts.is-style-list-horizontal .rank-math-related-thumb,.wp-block-rank-math-related-posts.rank-math-related-posts.rank-math-related-list-horizontal .rank-math-related-thumb{flex:0 0 180px;overflow:hidden}.wp-block-rank-math-related-posts.rank-math-related-posts.is-style-list-horizontal .rank-math-related-thumb img,.wp-block-rank-math-related-posts.rank-math-related-posts.rank-math-related-list-horizontal .rank-math-related-thumb img{width:180px;height:180px;-o-object-fit:cover;object-fit:cover}.wp-block-rank-math-related-posts.rank-math-related-posts.is-style-list-horizontal .rank-math-related-content,.wp-block-rank-math-related-posts.rank-math-related-posts.rank-math-related-list-horizontal .rank-math-related-content{flex:1;min-width:0;display:flex;flex-direction:column}.wp-block-rank-math-related-posts.rank-math-related-posts.is-style-list-horizontal .rank-math-related-title,.wp-block-rank-math-related-posts.rank-math-related-posts.rank-math-related-list-horizontal .rank-math-related-title{margin-top:0}@media (max-width: 640px){.wp-block-rank-math-related-posts.rank-math-related-posts.is-style-list-horizontal .rank-math-related-item,.wp-block-rank-math-related-posts.rank-math-related-posts.rank-math-related-list-horizontal .rank-math-related-item{gap:16px}.wp-block-rank-math-related-posts.rank-math-related-posts.is-style-list-horizontal .rank-math-related-thumb,.wp-block-rank-math-related-posts.rank-math-related-posts.rank-math-related-list-horizontal .rank-math-related-thumb{flex:0 0 120px}.wp-block-rank-math-related-posts.rank-math-related-posts.is-style-list-horizontal .rank-math-related-thumb img,.wp-block-rank-math-related-posts.rank-math-related-posts.rank-math-related-list-horizontal .rank-math-related-thumb img{width:120px;height:120px}}@media (max-width: 480px){.wp-block-rank-math-related-posts.rank-math-related-posts.is-style-list-horizontal .rank-math-related-item,.wp-block-rank-math-related-posts.rank-math-related-posts.rank-math-related-list-horizontal .rank-math-related-item{flex-direction:column}.wp-block-rank-math-related-posts.rank-math-related-posts.is-style-list-horizontal .rank-math-related-thumb,.wp-block-rank-math-related-posts.rank-math-related-posts.rank-math-related-list-horizontal .rank-math-related-thumb{flex:0 0 auto;width:100%}.wp-block-rank-math-related-posts.rank-math-related-posts.is-style-list-horizontal .rank-math-related-thumb img,.wp-block-rank-math-related-posts.rank-math-related-posts.rank-math-related-list-horizontal .rank-math-related-thumb img{width:100%;height:auto;max-height:200px}}.wp-block-rank-math-related-posts.rank-math-related-posts .rank-math-related-item{border-radius:var(--rm-related-border-radius);padding:var(--rm-related-card-padding);background:inherit;transition:transform var(--rm-related-transition),box-shadow var(--rm-related-transition)}.wp-block-rank-math-related-posts.rank-math-related-posts .rank-math-related-item:hover{transform:translateY(-2px);box-shadow:var(--rm-related-hover-shadow)}.wp-block-rank-math-related-posts.rank-math-related-posts .rank-math-related-title{margin:0.5rem 0;font-size:inherit;line-height:inherit}.wp-block-rank-math-related-posts.rank-math-related-posts .rank-math-related-title a{color:inherit;text-decoration:none;transition:color 0.2s ease}.wp-block-rank-math-related-posts.rank-math-related-posts .rank-math-related-title a:hover{color:#2563eb;text-decoration:underline}.wp-block-rank-math-related-posts.rank-math-related-posts .rank-math-related-title:not(:has(a)){cursor:default}.wp-block-rank-math-related-posts.rank-math-related-posts .rank-math-related-thumb{position:relative;overflow:hidden;border-radius:4px;display:block}.wp-block-rank-math-related-posts.rank-math-related-posts .rank-math-related-thumb img{display:block;width:100%;height:auto;border-radius:4px;transition:transform 0.3s ease}.wp-block-rank-math-related-posts.rank-math-related-posts .rank-math-related-thumb:hover img{transform:scale(1.05)}.wp-block-rank-math-related-posts.rank-math-related-posts .rank-math-related-thumb:not(a){cursor:default}.wp-block-rank-math-related-posts.rank-math-related-posts .rank-math-related-thumb:not(a):hover img{transform:none}.wp-block-rank-math-related-posts.rank-math-related-posts .rank-math-related-date{margin-top:0.25rem;font-size:0.85em;opacity:0.7}.wp-block-rank-math-related-posts.rank-math-related-posts .rank-math-related-terms{margin-top:0.5rem}.wp-block-rank-math-related-posts.rank-math-related-posts .rank-math-related-chip{display:inline-block;background:#f3f4f6;border:1px solid #e5e7eb;border-radius:999px;padding:0.15rem 0.5rem;margin-right:0.35rem;font-size:0.8em}.wp-block-rank-math-related-posts.rank-math-related-posts .rank-math-related-excerpt{margin-top:0.5rem;color:inherit;opacity:0.8;font-size:0.9em;line-height:1.6;display:-webkit-box;-webkit-line-clamp:3;line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.wp-block-rank-math-related-posts.rank-math-related-posts .rank-math-related-more{margin-top:1rem}.wp-block-rank-math-related-posts.rank-math-related-posts .rank-math-related-button{display:inline-block;background:#111827;color:#fff;border-radius:6px;padding:0.625rem 1.25rem;text-decoration:none;font-weight:500;transition:background 0.2s ease, transform 0.2s ease}.wp-block-rank-math-related-posts.rank-math-related-posts .rank-math-related-button:hover{background:#1f2937;transform:translateY(-1px)}.wp-block-rank-math-related-posts.has-border-color .rank-math-related-item{border-color:inherit}.wp-block-rank-math-related-posts.has-border-width .rank-math-related-item{border-width:inherit}.wp-block-rank-math-related-posts.has-border-style .rank-math-related-item{border-style:inherit}.wp-block-rank-math-related-posts.has-border-radius .rank-math-related-item{border-radius:inherit}.wp-block-rank-math-related-posts:not(.has-border-color):not(.has-border-width):not(.has-border-style) .rank-math-related-item{border:1px solid #e5e7eb}
+
+</style>
+<link rel="stylesheet" id="sam-style-css" href="/wp-content/themes/sam/style.css?ver=6.5.10" type="text/css" media="all">
+<link rel="stylesheet" id="new-style-css" href="/wp-content/themes/sam/assets/build/css/app.css?ver=6.5.10" type="text/css" media="all">
+<link rel="stylesheet" id="owl-carousel-style-css" href="/wp-content/themes/sam/css/owl.carousel.min.css?ver=6.5.10" type="text/css" media="all">
+<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style> 
+
+</head>
+
+
+ <body class="post-template post-template-post-templates post-template-Blog_post_template post-template-post-templatesBlog_post_template-php single single-post postid-1759 single-format-standard wp-embed-responsive">
+
+    <div class="wrapper wrapper">  
+    
+    
+      <main class="wrapper__content">
+        <header class="header">
+          <div class="header__box box">
+			  <a class="logo" href="/">
+				  <img src="/wp-content/uploads/logo_30.svg" width="144" height="45" alt="SAM">
+			  </a>
+            <div class="header__container">
+              <div class="header__wrapper">
+                <div class="header__inner">
+                  <nav class="nav">
+                    <ul class="nav__list">
+                      <li class="nav__item nav__item_submenu">
+                        <a class="nav__link nav__mob-hidden" href="#"> Solutions <svg class="nav__arrow" width="10" height="6">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/wp-content/themes/sam/img/sprite.svg#icon-arrow-nav"></use>
+                          </svg>
+                        </a>
+                        <div class="nav__sub">
+                          <ul class="nav__sub-list">
+
+                            <li class="nav__sub-item">
+                              <a class="nav__sub-link" href="/cloud-migration-solutions/">Cloud Migration Services &amp; Solutions</a>
+                            
+                            </li>
+
+
+                            <li class="nav__sub-item">
+                              <a class="nav__sub-link" href="/custom-software-solutions/">Custom Software Solutions</a>
+                            
+                            </li>
+                            
+                            <li class="nav__sub-item">
+                              <a class="nav__sub-link" href="/customer-experience-and-ecommerce/">Customer Experience and eCommerce</a>
+
+            <ul id="menu-header-solutions-dme" class="nav__in-list"><li id="menu-item-5351" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5351"><a href="/sitecore-development-services/" class="nav__in-link">Sitecore Development Services</a></li>
+<li id="menu-item-5352" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5352"><a href="/sap-development-services/" class="nav__in-link">SAP Commerce Cloud (ex. hybris)</a></li>
+<li id="menu-item-5353" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5353"><a href="/magento-ecommerce-development/" class="nav__in-link">Magento</a></li>
+<li id="menu-item-5354" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5354"><a href="/fpx-cpq/" class="nav__in-link">FPX CPQ</a></li>
+</ul>   
+
+                                
+                                
+                                
+                            </li>
+                            <li class="nav__sub-item">
+                              <a class="nav__sub-link" href="/iot-embedded/">IoT &amp; Embedded</a>
+
+                <ul id="menu-header-solutions-iot" class="nav__in-list"><li id="menu-item-5355" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5355"><a href="/iot-development-services/" class="nav__in-link">Internet of Things (IoT)</a></li>
+<li id="menu-item-5356" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5356"><a href="/firmware-and-embedded-software/" class="nav__in-link">Firmware and Embedded Software</a></li>
+</ul>                           
+
+                            </li>
+                            <li class="nav__sub-item">
+                              <a class="nav__sub-link" href="/mobile-app-development/">Mobile</a>
+                            </li>
+                            
+                            <!--
+                             <li class="nav__sub-item">
+                              <a class="nav__sub-link" href="/startups/">Startup Support Program </a>
+                            </li>
+                            -->
+
+                             <li class="nav__sub-item">
+                              <a class="nav__sub-link" href="/react-js-development-services/">React Development Services</a>
+                            </li>
+                            
+                            
+                            
+                          </ul>
+                        </div>
+                      </li>
+                      
+                      
+                      <li class="nav__item">
+                        <a class="nav__link" href="/insights/">Insights</a>
+                      </li>
+                      
+                      
+                      
+                      
+                      <li class="nav__item">
+                        <a class="nav__link" href="/case-studies/">Portfolio</a>
+                      </li>
+                      <li class="nav__item">
+                        <a class="nav__link" href="/about-us/">About Us</a>
+                      </li>
+                    </ul>
+                  </nav>
+                  <div class="header__btn">
+                    <a class="btn btn_type_white btn_size_small" href="/contact/">Contact Us</a>
+                  </div>
+                  <div class="header__contact">
+                    <div class="header__row">
+                      <a href="tel:+18577776073" class="header__link header__link_phone">+1 (857) 777-6073</a>
+                    </div>
+                    <div class="header__row">
+                      <a href="/cdn-cgi/l/email-protection#2c45424a436c5f4d41015f434059584543425f02595f" class="header__link"><span class="__cf_email__" data-cfemail="6900070f06291a0804441a06051c1d0006071a471c1a">[email protected]</span></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a class="nav-btn" href="#">
+              <span class="nav-btn__side">
+                <span class="nav-btn__text nav-btn__text_open">menu</span>
+                <span class="nav-btn__text nav-btn__text_close">close</span>
+              </span>
+              <span class="nav-btn__item">
+                <span class="nav-btn__line"></span>
+              </span>
+            </a>
+          </div>
+        </header>
+        <!-- BEGIN content -->
+        <article class="article wrap box">
+          <header class="article__header">
+            <div class="top__nav"> <a class="back back_black" href="/insights/"><svg class="back__arrow" width="7" height="10"> <use xlink:href="/wp-content/themes/sam/img/sprite.svg#icon-arrow"></use> </svg> <span class="back__text">Back to Blog</span> </a></div>
+            <h1 class="heading heading_left" id="content">Azure AD B2C Tutorial: How to Authenticate in Sitecore via Azure</h1>
+          </header>
+          <div class="layout mb">
+            <aside class="layout__side">
+              <div class="side-nav sticky js-anchor-nav"><div class="lwptoc lwptoc-autoWidth lwptoc-light lwptoc-notInherit" data-smooth-scroll="1" data-smooth-scroll-offset="24"><div class="lwptoc_i">    <div class="lwptoc_header">
+        <b class="lwptoc_title">Contents</b>                    <span class="lwptoc_toggle">
+                <a href="#" class="lwptoc_toggle_label" data-label="show">hide</a>
+            </span>
+            </div>
+<div class="lwptoc_items lwptoc_items-visible">
+    <ul class="lwptoc_itemWrap"><li class="lwptoc_item">    <a href="#Getting_Azure_AD_B2C_Ready_to_Go">
+                <span class="lwptoc_item_label">Getting Azure AD B2C Ready to Go</span>
+    </a>
+    </li><li class="lwptoc_item">    <a href="#Seconds_Step_Preparing_the_Configuration">
+                <span class="lwptoc_item_label">Seconds Step: Preparing the Configuration</span>
+    </a>
+    </li><li class="lwptoc_item">    <a href="#Third_Step_Coding">
+                <span class="lwptoc_item_label">Third Step: Coding</span>
+    </a>
+    </li><li class="lwptoc_item">    <a href="#Deployment">
+                <span class="lwptoc_item_label">Deployment</span>
+    </a>
+    </li><li class="lwptoc_item">    <a href="#Claims_Transformations">
+                <span class="lwptoc_item_label">Claims Transformations</span>
+    </a>
+    </li><li class="lwptoc_item">    <a href="#How_to_Let_Users_Bypass_Sitecore_Login">
+                <span class="lwptoc_item_label">How to Let Users Bypass Sitecore Login</span>
+    </a>
+    </li></ul></div>
+</div></div></div> 
+              <div class="aside">
+                <div class="aside__top">
+                                      	                </div>
+              </div>
+            </aside>
+            <div class="layout__base content js-anchor-content">
+              <div class="entry-content">
+			<div class="entry-content-wrapper">
+<section class="section js-anchor-content__item">
+    
+ 	<header class="entry-header">
+			</header><!-- .entry-header -->
+
+	
+	<div class="entry-content">
+		
+<p>Prior to Sitecore 9.1 being released, ASP.NET Identity is what was used for authentication and identity management across all Sitecore products. However, with the release of <a href="/insights/difference-between-sitecore-8-and-9/">Sitecore 9.1</a> came the introduction of IdentitySever4 as the new identity management and authentication platform.</p>
+
+
+
+<p>While this transition offers a more modern application stack (.NET Core 2.1), it’s also made things a bit more convoluted (especially if you want to deploy Sitecore to Azure). Because Sitecore 9 uses IDS via a segmented .NET Core app, while still being a .NET Framework-based platform, there’s an increased level of complexity in regards to managing the .NET Framework CMS and the .NET Core/IDS-based identity management/authentication platform. This is why we created the below Azure AD B2C tutorial, to help you acclimate to this transition.</p>
+
+
+
+<p>Making the change to a .NET Core and IDS-based platform has initiated the process of transitioning from a very large, difficult to maintain app to a more manageable set of microservices that are much easier to scale.. IDS has a relatively straightforward process when it comes to adding federated authentication to it, however, the problem lies in the fact that Sitecore is close-sourced – which means that some extra steps need to be taken.</p>
+
+
+
+<p>In the below Azure AD B2C tutorial, we explain exactly how to integrate Azure AD B2C authentication to Sitecore. We provide a detailed overview of creating your own connector, and how to unify IDS claims returned by this connector.</p>
+
+
+
+<h2 class="wp-block-heading"><span id="Getting_Azure_AD_B2C_Ready_to_Go">Getting Azure AD B2C Ready to Go</span></h2>
+
+
+
+<p>The first step in being able to authenticate in Sitecore via Azure involves making sure that Azure AD B2C is up and running properly. Follow these instructions to get your instance ready to go for integration:</p>
+
+
+
+<ol>
+<li>Create a new .Net Standard 2.0 Class Library project,</li>
+
+
+
+<li>Add global.json file to the root of your project with the following content:</li>
+</ol>
+
+
+<div class="wp-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
+{
+    "msbuild-sdks": {
+        "Sitecore.Framework.Runtime.Build": "1.1.0"
+    }
+}
+</pre></div>
+
+
+<ol start="3">
+<li>Add the following folder to your project <span style="background-color: #f6f6f6;">/sitecore/{assembly.name}/Config</span></li>
+
+
+
+<li>Add a <span style="background-color: #f6f6f6;">{assembly.name}.xml</span> to the folder created in the previous step with the following content:</li>
+</ol>
+
+
+<div class="wp-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;Settings&gt;
+    &lt;Sitecore&gt;
+    &lt;/Sitecore&gt;
+&lt;/Settings&gt;
+</pre></div>
+
+
+<p>Make sure the file has its <span style="background-color: #f6f6f6;">Build Action</span> set to <span style="background-color: #f6f6f6;">Content</span> and <span style="background-color: #f6f6f6;">Copy To Output Folder</span> to <span style="background-color: #f6f6f6;">Copy always</span></p>
+
+
+
+<ol start="5">
+<li>Add <span style="background-color: #f6f6f6;">Sitecore.Framework.Runtime.Abstractions</span>, ver. 4.1.0 NuGet package to your project,</li>
+
+
+
+<li>Add <span style="background-color: #f6f6f6;">Sitecore.Plugin.IdentityProviders</span>, ver. 3.0.0 NuGet package to your project,</li>
+
+
+
+<li>Create a class called <span style="background-color: #f6f6f6;">ConfigureSitecore</span> with the following content:</li>
+</ol>
+
+
+<div class="wp-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Sitecore.Framework.Runtime.Configuration;
+ 
+namespace GitVadim.Sitecore.NetCore.IdentityServer.AzureB2C
+{
+    public class ConfigureSitecore {
+        private readonly ILogger&lt;ConfigureSitecore&gt; _logger;
+ 
+        public ConfigureSitecore(ISitecoreConfiguration scConfig, ILogger&lt;ConfigureSitecore&gt; logger) { }
+ 
+        public void ConfigureServices(IServiceCollection services) { }
+   }
+}
+</pre></div>
+
+
+<ol start="8">
+<li>Open the .csproj file in Notepad and add the following line:</li>
+</ol>
+
+
+<div class="wp-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
+&lt;Sdk Name=&quot;Sitecore.Framework.Runtime.Build&quot; /&gt;
+</pre></div>
+
+
+<p>right after the first line,</p>
+
+
+
+<h2 class="wp-block-heading"><span id="Seconds_Step_Preparing_the_Configuration">Seconds Step: Preparing the Configuration</span></h2>
+
+
+
+<p>The next step of our Azure AD B2C tutorial involves updating your {assembly.name}.xml file with the following code. Use the specific values that were created during the set-up process.</p>
+
+
+<div class="wp-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;Settings&gt;
+    &lt;Sitecore&gt;
+        &lt;ExternalIdentityProviders&gt;
+            &lt;IdentityProviders&gt;
+                &lt;AzureB2C type=&quot;GitVadim.Sitecore.NetCore.IdentityServer.AzureB2C.AzureB2CIdentityProvider , GitVadim.Sitecore.NetCore.IdentityServer.AzureB2C&quot;&gt;
+                   &lt;AuthenticationScheme&gt;IdS4-AzureB2C&lt;/AuthenticationScheme&gt;
+                   &lt;Enabled&gt;true&lt;/Enabled&gt;
+                   &lt;!-- BEGIN AB2C CUSTOM CONFIGURATION BLOCK --&gt;
+                   &lt;DisplayName&gt;&lt;/DisplayName&gt;
+                   &lt;!-- The ID of your application within the tenant --&gt;
+                   &lt;ClientId&gt;&lt;/ClientId&gt;
+                   &lt;!-- The name of your signup policy --&gt;
+                   &lt;SignUpSignInPolicyId&gt;&lt;/SignUpSignInPolicyId&gt;
+                   &lt;!-- Your ADB2C instance as https://{tenant_name}.b2clogin.com--&gt;
+                   &lt;AzureAdB2CInstance&gt;&lt;/AzureAdB2CInstance&gt;
+                   &lt;!-- Your tenant as {tenant_name}.onmicrosoft.com --&gt;
+                   &lt;Tenant&gt;&lt;/Tenant&gt;
+                   &lt;!-- RedirectURL must be {IdentityServer_URL/signin-oidc} --&gt;
+                   &lt;RedirectUrl&gt;&lt;/RedirectUrl&gt;
+                   &lt;ClientSecret&gt;&lt;/ClientSecret&gt;
+                   &lt;!-- END AB2C CUSTOM CONFIGURATION BLOCK --&gt;
+               &lt;/AzureB2C&gt;
+            &lt;/IdentityProviders&gt;
+        &lt;/ExternalIdentityProviders&gt;
+    &lt;/Sitecore&gt;
+&lt;/Settings&gt;
+</pre></div>
+
+
+<h2 class="wp-block-heading"><span id="Third_Step_Coding">Third Step: Coding</span></h2>
+
+
+
+<p>While setting up a custom identity management solution can be a complex process (even for the savviest of developers), Azure AD B2C comes with built-in integration with both OAuth and OpenID (both of which have integral IDS4 support). Thanks to this built-in integration, the only actual coding work that needs to be done is setting up the proper variables for Azure.</p>
+
+
+
+<h3 class="wp-block-heading">The first step is to create a new class (for IdentityProvider), and then set it to inherit from:</h3>
+
+
+
+<p><code>Sitecore.Plugin.IdentityProviders.IdentityProvider</code>:</p>
+
+
+<div class="wp-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
+public class AzureB2CIdentityProvider : Sitecore.Plugin.IdentityProviders.IdentityProvider
+{
+    public string ClientId { get; set; }
+    public string Tenant { get; set; }
+    public string SignUpSignInPolicyId { get; set; }
+    public string AzureADB2CInstance { get; set; }
+    public string RedirectUri { get; set; }
+    public string ClientSecret { get; set; }
+}
+</pre></div>
+
+
+<p>The purpose of this class is to allow Azure to properly process our requests. By inheriting the class, added functionality is created (e.g. “ClaimsTransformations”).</p>
+
+
+
+<h3 class="wp-block-heading">Next step: In order to be able to read the configuration from the {assembly.name}.xml file, we’ll define a separate class:</h3>
+
+
+<div class="wp-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
+public class AppSettings
+{
+   //For convenience, we'll store the config path of our settings in a variable
+   public static readonly string SectionName = "Sitecore:ExternalIdentityProviders:IdentityProviders:AzureB2C";
+ 
+   public AzureB2CIdentityProvider AzureAdIdentityProvider { get; set; } = new AzureB2CIdentityProvider();
+}
+</pre></div>
+
+
+<p>The static SectionName property defines the path in the {assembly.name}.xml file where our configuration should be looked for.</p>
+
+
+
+<p>You’re also going to need to properly define the “Provider” property (which references the specific IDP instance you’re using).</p>
+
+
+
+<h3 class="wp-block-heading">After the settings have been properly created, you now have the ability to fully integrate with IDS4.</h3>
+
+
+<div class="wp-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
+public class ConfigureSitecore
+ {
+    private readonly ILogger&lt;ConfigureSitecore&gt; _logger;
+    private readonly AppSettings _settings;
+ 
+    public ConfigureSitecore(ISitecoreConfiguration scConfig, ILogger&lt;ConfigureSitecore&gt; logger)
+    {
+        this._logger = logger;
+        this._settings = new AppSettings();
+        scConfig.GetSection(AppSettings.SectionName)
+        .Bind((object)this._settings.AzureAdIdentityProvider);
+    }
+ }
+</pre></div>
+
+
+<h3 class="wp-block-heading">Finalize everything by going to the “ConfigureSitecore” class and inputting the following changes to “ConfigureServices”</h3>
+
+
+<div class="wp-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
+public void ConfigureServices(IServiceCollection services)
+{
+   var provider = _settings.AzureAdIdentityProvider;
+   if (!provider.Enabled) return;
+   this._logger.LogInformation($"Configure '{provider.DisplayName}' with the following setup: ClientId='{provider.ClientId}', ClientSecret='{provider.ClientSecret}', Tenant='{provider.Tenant}', SignUpSignInPolicyId='{provider.SignUpSignInPolicyId}', RedirectUrl='{provider.RedirectUri}' ");
+ 
+   new AuthenticationBuilder(services).AddOpenIdConnect(provider.AuthenticationScheme, provider.DisplayName, options =&amp;gt;
+{
+   //This is required by Sitecore's implementation of IDS
+   options.SignInScheme = "idsrv.external";
+   options.UseTokenLifetime = true;
+   options.SaveTokens = true;
+   options.Authority = $"{provider.AzureADB2CInstance}/{provider.Tenant}/{provider.SignUpSignInPolicyId}/v2.0/";
+   options.ClientId = provider.ClientId;
+   options.ClientSecret = provider.ClientSecret;
+   options.ResponseType = OpenIdConnectResponseType.CodeIdToken;
+   options.ResponseMode = OpenIdConnectResponseMode.FormPost;
+   //Azure AD requires us to pass the ClientId as a claim for the integration to work
+   options.Scope.Add(provider.ClientId);
+   options.Scope.Add(OpenIdConnectScope.OpenIdProfile);
+   options.Scope.Add(OpenIdConnectScope.OfflineAccess);
+        });
+}
+</pre></div>
+
+
+<p>Now it’s time for compiling. If you’re able to compile without any errors, the next step is moving on to deployment and testing.</p>
+
+
+
+<h2 class="wp-block-heading"><span id="Deployment">Deployment</span></h2>
+
+
+
+<p>Building code within .NET Core is performed via the dotnet tool. In order for the NuGet packages to be restored and the code to be built through CLI, the “publish” subroutine will be implemented.</p>
+
+
+
+<p>Use the following command to create an artifact that’s ready to run:</p>
+
+
+<div class="wp-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
+dotnet publish -c Release -o C:\Temp\output_test
+</pre></div>
+
+
+<p>That command will utilize the “Release” configuration in order to build the code. The output will be copied to a specific location on your drive (“output_test” within your Temp folder).</p>
+
+
+
+<p>Before you can actually deploy the code to your IIS website, you’re going to need to stop the relevant Application Pool. This is important because until the Application Pool is stopped, your site’s directory files will effectively be locked (and won’t be able to be overwritten).</p>
+
+
+
+<p>After the code has been deployed, start the app pool once more, and then go to the instance login page (for Sitecore). If everything has been done properly, a new button should be located on the login form (AB2C).</p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter"><img decoding="async" src="/wp-content/uploads/pasted-image-0-min.png" alt="sitecore login"></figure></div>
+
+
+<p>If you click the “AB2C” button it should bring you to the sign-in page for Azure AD AB2C. The next section of this Azure AD B2C tutorial covers claims transformations.</p>
+
+
+
+<h2 class="wp-block-heading"><span id="Claims_Transformations">Claims Transformations</span></h2>
+
+
+
+<p>After authentication has successfully been completed, IDS will assign a “ClaimsIdentity” to the context of the current request – this object will contain all information about the logged in user as reported by Azure AD B2C in a form of a set of “Claims.”</p>
+
+
+
+<p>Naturally, different IDPs can’t be expected to send every single claim in varying formats, which is why it’s necessary to unify the claims format so that it’s easier to understand from within Sitecore.</p>
+
+
+
+<p>Go to your main configuration file, and then place the following snippet into a new section immediately following the “ClientSecret” node.</p>
+
+
+<div class="wp-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
+&lt;ClaimsTransformations&gt;
+    &lt;EmailClaimTransformation type=&quot;Sitecore.Plugin.IdentityProviders.DefaultClaimsTransformation, Sitecore.Plugin.IdentityProviders&quot;&gt;
+        &lt;SourceClaims&gt;
+            &lt;Claim type=&quot;emails&quot; /&gt;
+        &lt;/SourceClaims&gt;
+        &lt;NewClaims&gt;
+            &lt;Claim type=&quot;email&quot; /&gt;
+        &lt;/NewClaims&gt;
+    &lt;/EmailClaimTransformation&gt;
+    &lt;NameClaimTransformation type=&quot;Sitecore.Plugin.IdentityProviders.DefaultClaimsTransformation, Sitecore.Plugin.IdentityProviders&quot;&gt;
+        &lt;SourceClaims&gt;
+            &lt;GivenNameClaim type=&quot;http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname&quot; /&gt;
+        &lt;/SourceClaims&gt;
+        &lt;NewClaims&gt;
+            &lt;Claim type=&quot;http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name&quot; /&gt;
+        &lt;/NewClaims&gt;
+    &lt;/NameClaimTransformation&gt;
+&lt;/ClaimsTransformations&gt;
+</pre></div>
+
+
+<p>While Azure AD automatically returns emails with the claim “emails” – that should be changed to just “email” – with the other main change that you need to make here being switching “givenname” to simply “name”.</p>
+
+
+
+<p>Sitecore only offers basic functionality when it comes to mapping claims and performing more advanced forms of processing (e.g. combining two claims to create a new claim). Functionality is limited to mapping between source claims and IDS.</p>
+
+
+
+<p>So, in order to do higher-level processing work, the creation of an additional transformation class is required. After you’ve created the class, set it up to inherit from:</p>
+
+
+<div class="wp-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
+Sitecore.Plugin.IdentityProviders.ClaimsTransformation
+</pre></div>
+
+
+<p>After it’s been created, go to your configuration and add it to ClaimsTransformations.</p>
+
+
+
+<p>In order to ensure that Sitecore is able to process your new claims, you’re going to need to add them to the following nodes in sitecore\Sitecore.Plugin.IdentityServer\Config\identityServer.config:</p>
+
+
+<div class="wp-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
+Settings/Sitecore/IdentityServer/IdentityResources/SitecoreIdentityResource/UserClaims
+</pre></div>
+
+<div class="wp-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
+Settings/Sitecore/IdentityServer/IdentityResources/SitecoreApiResource/UserClaims
+</pre></div>
+
+
+<h2 class="wp-block-heading"><span id="How_to_Let_Users_Bypass_Sitecore_Login">How to Let Users Bypass Sitecore Login</span></h2>
+
+
+
+<p>In order to have users log in to your website/app without going through the Sitecore log-in process, you’re going to need to add some code to your Sitecore app. So, the next step in our Azure AD B2C tutorial is to place the following config snippet into your Sitecore app:</p>
+
+
+<div class="wp-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;configuration xmlns:patch=&quot;http://www.sitecore.net/xmlconfig/&quot; 
+  xmlns:role=&quot;http://www.sitecore.net/xmlconfig/role/&quot; 
+  xmlns:set=&quot;http://www.sitecore.net/xmlconfig/set/&quot;&gt;
+  &lt;sitecore role:require=&quot;Standalone or ContentDelivery or ContentManagement&quot;&gt;
+    &lt;federatedAuthentication&gt;
+      &lt;identityProvidersPerSites&gt;
+        &lt;mapEntry name=&quot;all sites&quot;&gt;
+          &lt;identityProviders hint=&quot;list:AddIdentityProvider&quot;&gt;
+            &lt;identityProvider ref=&quot;federatedAuthentication/identityProviders/identityProvider[@id='SitecoreIdentityServer/IdS4-AzureB2C']&quot; /&gt;
+          &lt;/identityProviders&gt;
+        &lt;/mapEntry&gt;
+      &lt;/identityProvidersPerSites&gt;
+      &lt;identityProviders&gt;
+        &lt;identityProvider id=&quot;SitecoreIdentityServer/IdS4-AzureB2C&quot; type=&quot;Sitecore.Owin.Authentication.Configuration.DefaultIdentityProvider, Sitecore.Owin.Authentication&quot;&gt;
+          &lt;param desc=&quot;name&quot;&gt;$(id)&lt;/param&gt;
+          &lt;param desc=&quot;domainManager&quot; type=&quot;Sitecore.Abstractions.BaseDomainManager&quot; resolve=&quot;true&quot; /&gt;
+          &lt;!-- This propery will be ignored --&gt;
+          &lt;caption&gt;Log in with Sitecore Identity: Azure AD&lt;/caption&gt;
+          &lt;!-- This property will be ignored --&gt;
+          &lt;icon&gt;/sitecore/shell/themes/standard/Images/24x24/msazure.png&lt;/icon&gt;
+          &lt;!-- This property will be ignored --&gt;
+          &lt;domain&gt;extranet&lt;/domain&gt;
+        &lt;/identityProvider&gt;
+      &lt;/identityProviders&gt;
+      &lt;propertyInitializer&gt;
+        &lt;maps&gt;
+          &lt;map name=&quot;set FullName&quot; type=&quot;Sitecore.Owin.Authentication.Services.DefaultClaimToPropertyMapper, Sitecore.Owin.Authentication&quot; resolve=&quot;true&quot;&gt;
+            &lt;data hint=&quot;raw:AddData&quot;&gt;
+              &lt;source name=&quot;name&quot; /&gt;
+              &lt;target name=&quot;FullName&quot; /&gt;
+            &lt;/data&gt;
+          &lt;/map&gt;
+          &lt;map name=&quot;set Email&quot; type=&quot;Sitecore.Owin.Authentication.Services.DefaultClaimToPropertyMapper, Sitecore.Owin.Authentication&quot; resolve=&quot;true&quot;&gt;
+            &lt;data hint=&quot;raw:AddData&quot;&gt;
+              &lt;source name=&quot;email&quot; /&gt;
+              &lt;target name=&quot;Email&quot; /&gt;
+            &lt;/data&gt;
+          &lt;/map&gt;
+        &lt;/maps&gt;
+      &lt;/propertyInitializer&gt;
+    &lt;/federatedAuthentication&gt;
+  &lt;/sitecore&gt;
+&lt;/configuration&gt;
+</pre></div>
+
+
+<p>Because Sitecore uses mapEntry to decide which authentication requests will be allowed (from IDPs), adding this code is necessary for including your IDP the mapEntry identity provider list. Without adding this code, your IDP won’t be able to serve requests.</p>
+
+
+
+<p>Another reason why this code edit is important is that it provides a definition for your IDP. You need to make sure that {name} after the slash in “Sitecoreidentityserver/” corresponds to the proper “AuthenticationScheme” from your IDS’s IDP settings.</p>
+
+
+
+<p><strong>Note:</strong><br><em>The processing of all requests is still going to be fully done by the Sitecore IDP. The purpose of providing a definition for your IDP, in this case, refers to the IDP of Sitecore being able to differentiate between the two logins (i.e. – your login versus the login of your users).</em></p>
+
+
+
+<p><em>In terms of your implementation strategy, this is something that needs to be given some thought – because in certain cases it might not be ideal to have all users be stored within Sitecore.</em></p>
+
+
+
+<p>One other major benefit of including this config:</p>
+
+
+
+<p>Setting the “PropertyInitializer” up to map whatever is passed from “ClaimsIdentity” to the Sitecore user. Mapping specific user attributes, as well as Sitecore groups, can be achieved through this same method.</p>
+
+
+
+<p>After this config has been properly implemented, you should be able to notice the following effects:</p>
+
+
+
+<ul>
+<li>According to the settings within “PropertyInitializer” – the attributes of your users will update upon log-in.</li>
+
+
+
+<li>Users can sign-in to the site via a specific log-in URL</li>
+</ul>
+
+
+
+<p>That’s it for this Azure AD B2C tutorial, be sure to check back often for other Sitecore-related blogs, tutorials, and articles.</p>
+
+
+
+    <div class="author-block">
+                    <h3>Author</h3>
+                            <blockquote class="quote quote_alt">
+                <div class="quote__cite">
+                                            <div class="quote__pic">
+                            <img decoding="async" src="/wp-content/uploads/Vadim-Gusev-150x150-1.webp" width="96" height="96" alt="Vadim Gusev" class="avatar avatar-96 wp-user-avatar wp-user-avatar-96 alignnone photo">                                                    </div>
+                                        <div class="quote__base">
+                                                    <p>
+                                <cite class="quote__author">Vadim Gusev</cite>
+                            </p>
+                                                                            <div class="quote__position">Sitecore evangelist, Sitecore and .NET Architect at SaM Solutions. Full-stack developer with almost a decade of experience in the traditional and headless CMS world.</div>
+                                            </div>
+                </div>
+            </blockquote> 
+            </div>
+	</div><!-- .entry-content -->
+<!-- </article> #post-1759 -->
+</section>
+</div></div></div></div></article> 
+
+          <!-- END content -->
+        
+  <div class="related_news 
+                related_news--gray-bg        
+            ">
+    <div class="container box">
+            <div class="grid grid_blog"> 
+                         
+                           
+                     
+                <div class="grid__cell">
+                  <a class="blog" href="/insights/what-is-sitecore/">
+                    <div class="blog__top">                       
+                       <img width="350" height="193" src="/wp-content/uploads/What-Is-Sitecore-min-2.png" class="blog__img wp-post-image" alt="What Is Sitecore" decoding="async" loading="lazy" srcset="/wp-content/uploads/What-Is-Sitecore-min-2.png 1534w, /wp-content/uploads/What-Is-Sitecore-min-2-300x165.png 300w, /wp-content/uploads/What-Is-Sitecore-min-2-1024x565.png 1024w, /wp-content/uploads/What-Is-Sitecore-min-2-150x83.png 150w, /wp-content/uploads/What-Is-Sitecore-min-2-768x424.png 768w" sizes="(max-width: 350px) 100vw, 350px">                    </div>
+                    <div class="blog__box">
+                      <h2 class="blog__title">
+                          What Is Sitecore? From Products’ Overview to Pros and Cons                      </h2>
+                                                <div class="blog__row">
+                            <time class="info" datetime="2023-06-08">Jun 08, 2023</time>
+                          </div>
+                                          </div>
+                  </a>
+                </div>
+                
+                     
+                <div class="grid__cell">
+                  <a class="blog" href="/insights/sam-solutions-joins-thought-leaders-at-the-2023-new-york-ecommerce-summit/">
+                    <div class="blog__top">                       
+                       <img width="350" height="183" src="/wp-content/uploads/NY-Ecommerce-Summit-LN-0@2x-min.png" class="blog__img wp-post-image" alt="NY Ecommerce Summit" decoding="async" loading="lazy" srcset="/wp-content/uploads/NY-Ecommerce-Summit-LN-0@2x-min.png 2401w, /wp-content/uploads/NY-Ecommerce-Summit-LN-0@2x-min-300x157.png 300w, /wp-content/uploads/NY-Ecommerce-Summit-LN-0@2x-min-1024x536.png 1024w, /wp-content/uploads/NY-Ecommerce-Summit-LN-0@2x-min-150x79.png 150w, /wp-content/uploads/NY-Ecommerce-Summit-LN-0@2x-min-768x402.png 768w, /wp-content/uploads/NY-Ecommerce-Summit-LN-0@2x-min-1536x804.png 1536w, /wp-content/uploads/NY-Ecommerce-Summit-LN-0@2x-min-2048x1072.png 2048w" sizes="(max-width: 350px) 100vw, 350px">                    </div>
+                    <div class="blog__box">
+                      <h2 class="blog__title">
+                          SaM Solutions Joins Thought Leaders at the 2023 New York eCommerce Summit                      </h2>
+                                                <div class="blog__row">
+                            <time class="info" datetime="2023-05-31">May 31, 2023</time>
+                          </div>
+                                          </div>
+                  </a>
+                </div>
+                
+                     
+                <div class="grid__cell">
+                  <a class="blog" href="/insights/how-to-choose-a-software-development-company/">
+                    <div class="blog__top">                       
+                       <img width="334" height="195" src="/wp-content/uploads/TOP-10-reasons-to-outsource-react-development@2x-min-2.png" class="blog__img wp-post-image" alt="How to Choose a Software Development Company" decoding="async" loading="lazy" srcset="/wp-content/uploads/TOP-10-reasons-to-outsource-react-development@2x-min-2.png 1537w, /wp-content/uploads/TOP-10-reasons-to-outsource-react-development@2x-min-2-300x175.png 300w, /wp-content/uploads/TOP-10-reasons-to-outsource-react-development@2x-min-2-1024x598.png 1024w, /wp-content/uploads/TOP-10-reasons-to-outsource-react-development@2x-min-2-150x88.png 150w, /wp-content/uploads/TOP-10-reasons-to-outsource-react-development@2x-min-2-768x448.png 768w" sizes="(max-width: 334px) 100vw, 334px">                    </div>
+                    <div class="blog__box">
+                      <h2 class="blog__title">
+                          How to Choose a Software Development Company                      </h2>
+                                                <div class="blog__row">
+                            <time class="info" datetime="2023-05-24">May 24, 2023</time>
+                          </div>
+                                          </div>
+                  </a>
+                </div>
+                           
+            
+           
+
+      </div>
+    </div>
+  </div>
+     </main>
+
+      <footer class="footer">
+        <div class="box">
+          <div class="footer__top">
+            <div class="footer__aside">
+              <a href="/" class="footer__logo">
+                <svg class="footer__logo-icon" width="120" height="51">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/wp-content/themes/sam/img/sprite.svg#icon-logo"></use>
+                </svg>
+              </a>
+            </div>
+            <div class="footer__content">
+              <div class="footer__cell">
+                <div class="footer__caption">Solutions</div>
+         
+         
+        
+            <ul id="menu-footer-solutions" class="footer__list"><li id="menu-item-5344" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5344"><a href="/custom-software-solutions/" class="footer__category">Custom Software Solutions</a></li>
+<li id="menu-item-5348" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5348"><a href="/customer-experience-and-ecommerce/" class="footer__category">Customer Experience and eCommerce</a></li>
+<li id="menu-item-5349" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5349"><a href="/iot-embedded/" class="footer__category">IoT &amp; Embedded</a></li>
+<li id="menu-item-5350" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5350"><a href="/mobile-app-development/" class="footer__category">Mobile Solutions</a></li>
+</ul>
+                
+              </div>
+              <div class="footer__cell">
+                <div class="footer__caption">Company</div>
+                
+                
+                        
+            <ul id="menu-footer-company" class="footer__list"><li id="menu-item-5347" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5347"><a href="/about-us/" class="footer__category">About Us</a></li>
+<li id="menu-item-130" class="footer__item menu-item menu-item-type-post_type menu-item-object-page menu-item-130"><a href="/press-kit/" class="footer__category">Press Kit</a></li>
+</ul>            
+  
+              </div>
+              
+              
+              <div class="footer__cell footer__cell_right">
+                <div class="footer__right">
+                  <div class="footer__caption">SaM Solutions USA</div>
+                  <div class="footer__row">
+                    <a href="tel:+18577776073" class="footer__link footer__link_phone">(857) 777-6073</a>
+                  </div>
+                  <div class="footer__row">
+                    <a href="/cdn-cgi/l/email-protection#254c4b434a6556444808564a4950514c4a4b560b5056" class="footer__link"><span class="__cf_email__" data-cfemail="b1d8dfd7def1c2d0dc9cc2deddc4c5d8dedfc29fc4c2">[email protected]</span></a>
+                  </div>
+                  <div class="footer__row">
+                    <p class="footer__address">83 Morse Street, Build. 6, Norwood, MA 02062, USA</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer__bottom">
+            <div class="footer__base">
+              <div class="footer__copy">© SaM Solutions<span class="footer__hide-mob">, Delivering high-quality software since 1993</span></div>
+              <div class="footer__privacy">
+                <a href="/privacy-and-responsibility/" class="footer__link-sm">Privacy &amp; Responsibility</a> 
+              </div>
+            </div>
+            <div class="footer__social social">
+              <a href="https://www.linkedin.com/company/samsolutionsusa" target="_blank" rel="nofollow" class="social__item">
+                <svg class="social__icon" width="19" height="19">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/wp-content/themes/sam/img/sprite.svg#icon-linkedin"></use>
+                </svg>
+              </a>
+
+              <a href="https://www.facebook.com/SaMSolutionsUS/" target="_blank" rel="nofollow" class="social__item">
+                <svg class="social__icon" width="20" height="21">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/wp-content/themes/sam/img/sprite.svg#icon-facebook"></use>
+                </svg>
+              </a>
+              <a href="https://twitter.com/SaMSolutionsUS" target="_blank" rel="nofollow" class="social__item social__item-twitter">
+                <svg fill="none" height="18" viewbox="0 0 21 18" width="21" xmlns="http://www.w3.org/2000/svg"><path d="m.839355 0 7.095705 10.1406-6.72266 7.8594h2.64063l5.26367-6.1699 4.3164 6.1699h6.9102l-7.4219-10.625 6.291-7.375h-2.5996l-4.8691 5.6875-3.9727-5.6875zm3.839845 2h2.04883l9.77737 14h-2.0313z" fill="#c3c6d0"></path></svg>
+              </a>
+              <a href="https://www.instagram.com/sam_solutions_usa/" target="_blank" rel="nofollow" class="social__item">
+                <svg class="social__icon" width="21" height="18">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/wp-content/themes/sam/img/sprite.svg#icon-instagram"></use>
+                </svg>
+              </a>
+
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+ 
+ 
+    <!-- BEGIN scripts -->
+    
+  
+
+
+
+     
+    <!-- END scripts -->
+
+
+  
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript" src="/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shCore.js?ver=3.0.9b" id="syntaxhighlighter-core-js"></script>
+<script type="text/javascript" src="/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/scripts/shBrushPlain.js?ver=3.0.9b" id="syntaxhighlighter-brush-plain-js"></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.head.appendChild( corecss );
+		var themecssurl = "/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		document.head.appendChild( themecss );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['auto-links'] = false;
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+
+	// Infinite scroll support
+	if ( typeof( jQuery ) !== 'undefined' ) {
+		jQuery( function( $ ) {
+			$( document.body ).on( 'post-load', function() {
+				SyntaxHighlighter.highlight();
+			} );
+		} );
+	}
+</script>
+<link rel="stylesheet" id="lwptoc-main-css" href="/wp-content/plugins/luckywp-table-of-contents/front/assets/main.min.css?ver=2.1.4" type="text/css" media="all">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" id="jquery-core-js"></script>
+<script type="text/javascript" src="/wp-content/themes/sam/js/owl.carousel.min.js?ver=6.5.10" id="owl-carousel-js"></script>
+<script type="text/javascript" src="/wp-content/themes/sam/js/owl-carousel.js?ver=6.5.10" id="owl-carousel-custom-js"></script>
+<script type="text/javascript" src="/wp-content/themes/sam/js/script.js?ver=6.5.10" id="customscriptsold-js"></script>
+<script type="text/javascript" src="/wp-content/themes/sam/assets/build/js/app.js?ver=6.5.10" id="customscripts-js"></script>
+<script type="text/javascript" src="/wp-content/plugins/luckywp-table-of-contents/front/assets/main.min.js?ver=2.1.4" id="lwptoc-main-js"></script>
+
+</body>
+</html>

@@ -1,0 +1,266 @@
+{
+    "key": "group_650d64715ddb7",
+    "title": "Success Stories Section",
+    "fields": [
+        {
+            "key": "field_650d629705701",
+            "label": "Title",
+            "name": "title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_650d629705702",
+            "label": "Title Alignment",
+            "name": "alignment_title",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Left": "Left",
+                "Center": "Center"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "allow_custom": 0,
+            "search_placeholder": ""
+        },
+        {
+            "key": "field_650d629705704",
+            "label": "Select case-studies option",
+            "name": "select_case_studies_option",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "recent_case": "Recent case",
+                "selection_case": "Selection case"
+            },
+            "default_value": "selection_case",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "allow_custom": 0,
+            "search_placeholder": ""
+        },
+        {
+            "key": "field_650d7f25f862e",
+            "label": "Selection case",
+            "name": "selection_case",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_650d629705704",
+                        "operator": "==",
+                        "value": "selection_case"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "acfe_seamless_style": 0,
+            "acfe_group_modal": 0,
+            "acfe_group_modal_close": 0,
+            "acfe_group_modal_button": "",
+            "acfe_group_modal_size": "large",
+            "sub_fields": [
+                {
+                    "key": "field_650d8360f862f",
+                    "label": "Case-studies",
+                    "name": "case-studies",
+                    "aria-label": "",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "case-studies"
+                    ],
+                    "post_status": [
+                        "publish"
+                    ],
+                    "taxonomy": "",
+                    "return_format": "id",
+                    "multiple": 1,
+                    "save_custom": 0,
+                    "save_post_status": "publish",
+                    "acfe_bidirectional": {
+                        "acfe_bidirectional_enabled": "0"
+                    },
+                    "allow_null": 0,
+                    "bidirectional": 0,
+                    "ui": 1,
+                    "bidirectional_target": [],
+                    "save_post_type": ""
+                }
+            ]
+        },
+        {
+            "key": "field_650d629705706",
+            "label": "Recent case",
+            "name": "recent_case",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_650d629705704",
+                        "operator": "==",
+                        "value": "recent_case"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "acfe_seamless_style": 0,
+            "acfe_group_modal": 0,
+            "acfe_group_modal_close": 0,
+            "acfe_group_modal_button": "",
+            "acfe_group_modal_size": "large",
+            "sub_fields": [
+                {
+                    "key": "field_650d629705707",
+                    "label": "Number of posts",
+                    "name": "number_of_posts",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "1": "1",
+                        "2": "2",
+                        "3": "3",
+                        "4": "4",
+                        "5": "5",
+                        "6": "6",
+                        "7": "7",
+                        "8": "8",
+                        "9": "9"
+                    },
+                    "default_value": 3,
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "allow_custom": 0,
+                    "search_placeholder": ""
+                }
+            ]
+        },
+        {
+            "key": "field_650d629705708",
+            "label": "See More (will appear if you fill in this field)",
+            "name": "see_more",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "option-page"
+            }
+        ],
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/case-studies"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfe_display_title": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1715180425
+}

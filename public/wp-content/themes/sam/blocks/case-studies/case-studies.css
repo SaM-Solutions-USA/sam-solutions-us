@@ -1,0 +1,70 @@
+.edit-post-visual-editor .block-editor-block-list__block .case {
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 25px;
+    min-height: 310px;
+}
+
+.edit-post-visual-editor .block-editor-block-list__block .case__link {
+    display: block;
+    text-decoration: none;
+    color: #404040;
+}
+
+.edit-post-visual-editor .block-editor-block-list__block .case__top {
+    height: 90px;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.edit-post-visual-editor .block-editor-block-list__block .case__desc {
+    font-size: 18px;
+    line-height: 1.33333;
+    font-weight: 700;
+}
+
+.edit-post-visual-editor .block-editor-block-list__block .case__bottom {
+    min-height: 78px;
+    padding-top: 30px;
+    margin-top: auto;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    margin-left: -10px;
+}
+
+.edit-post-visual-editor .block-editor-block-list__block .case__tag {
+    text-decoration: none;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-family: "Share Tech Mono",monospace;
+    font-size: 17px;
+    line-height: 1.11765;
+    color: #1d41b5;
+}
+
+.edit-post-visual-editor .block-editor-block-list__block .grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.edit-post-visual-editor .block-editor-block-list__block .grid_cases {
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.edit-post-visual-editor .block-editor-block-list__block .grid_cases .grid__cell {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 33.33%;
+}
+

@@ -1,0 +1,19 @@
+<svg height="163" width="163" xmlns="http://www.w3.org/2000/svg">
+  <filter id="a" filterUnits="userSpaceOnUse" height="163" width="163" x="0" y="0">
+    <feOffset dy="2"/>
+    <feGaussianBlur result="b" stdDeviation="5.5"/>
+    <feFlood flood-color="#5a5a5d" flood-opacity=".533"/>
+    <feComposite in2="b" operator="in"/>
+    <feComposite in="SourceGraphic"/>
+  </filter>
+  <clipPath id="b">
+    <path d="M0 0h72.901v21.05H0z"/>
+  </clipPath>
+  <g filter="url(#a)">
+    <circle cx="65" cy="65" fill="#333" r="65" transform="translate(16.5 14.5)"/>
+  </g>
+  <g clip-path="url(#b)" fill="#ffc200" transform="translate(45.5 68.5)">
+    <path d="M0 21.051V0h21.214v3.611h-16.4v5.65h16.4v3.611h-16.4v8.18H0M23.621 21.051V0h18.032q4.732 0 4.732 4.08v4.692c0 2.72-1.578 4.1-4.732 4.1H28.435v8.18h-4.814m15.747-17.44H28.435v5.65h10.928a3.578 3.578 0 001.591-.249 1.557 1.557 0 00.612-1.448V5.309a1.559 1.559 0 00-.612-1.448 3.578 3.578 0 00-1.591-.25zM64.076 12.226l-2.979 2.979 5.846 5.846h5.958zM72.901 0h-5.958l-5.845 5.845 2.979 2.979z"/>
+    <path d="M51.845 0h-5.957l10.525 10.526-10.525 10.526h5.957L62.37 10.526z"/>
+  </g>
+</svg>

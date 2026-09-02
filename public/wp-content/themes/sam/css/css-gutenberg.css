@@ -1,0 +1,141 @@
+@font-face{
+
+font-family: 'Montserrat';
+font-display: swap;
+font-weight: 700;
+src: url('/wp-content/themes/sam/fonts/Montserrat/Montserrat-latin-bold.woff');
+src: url('/wp-content/themes/sam/fonts/Montserrat/Montserrat-latin-bold.woff2');
+
+}
+
+
+@font-face{
+
+font-family: 'Montserrat';
+font-display: swap;
+font-weight: 500;
+src: url('/wp-content/themes/sam/fonts/Montserrat/Montserrat-latin-medium.woff');
+src: url('/wp-content/themes/sam/fonts/Montserrat/Montserrat-latin-medium.woff2');
+
+}
+
+
+@font-face{
+
+font-family: 'Montserrat';
+font-display: swap;
+font-weight: 400;
+src: url('/wp-content/themes/sam/fonts/Montserrat/Montserrat-latin-regular.woff');
+src: url('/wp-content/themes/sam/fonts/Montserrat/Montserrat-latin-regular.woff2');
+
+}
+
+.edit-post-visual-editor .block-editor-block-list__layout h2 {
+	font-family: 'Montserrat',sans-serif;
+	font-size: 42px;
+    line-height: 51.2px;
+	font-weight: 700;
+	color: #000;
+
+	margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+.edit-post-visual-editor .block-editor-block-list__layout h3 {
+	font-family: 'Montserrat',sans-serif;
+	font-size: 20px;
+    line-height: 1.25;
+	font-weight: 500;
+	color: #000;
+
+	margin-bottom: 15px;
+    margin-top: 40px;
+}
+
+.edit-post-visual-editor .block-editor-block-list__layout p {
+	font-family: 'Montserrat',sans-serif;
+	font-size: 16px;
+	line-height: 1.625;
+	font-weight: 500;
+	color: #333;
+
+	margin-bottom: 15px;
+}
+
+.edit-post-visual-editor .block-editor-block-list__layout p strong {
+	font-weight: 700;
+}
+
+.edit-post-visual-editor .block-editor-block-list__layout a {
+	font-family: 'Montserrat',sans-serif;
+	font-size: 16px;
+    line-height: 1.625;
+    font-weight: 500;
+	text-decoration: none;
+    color: #2558b5;
+}
+
+.edit-post-visual-editor .block-editor-block-list__layout ul {
+	list-style: none;
+	padding-left: 10px;
+}
+
+.edit-post-visual-editor .block-editor-block-list__layout ul li {
+	font-family: 'Montserrat',sans-serif;
+	font-size: 16px;
+    line-height: 1.625;
+    font-weight: 500;
+    color: #333;
+    position: relative;
+    padding-left: 10px;
+}
+
+
+.edit-post-visual-editor .block-editor-block-list__layout ul li:before {
+	content: "";
+    position: absolute;
+	top: 12px;
+    left: -5px;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: #333;
+}
+
+
+.edit-post-visual-editor .block-editor-block-list__layout ul li:nth-child(n+2) { 
+	margin-top: 14px;
+}
+
+.wp-block-table__cell-content {
+	border: 1px solid #c1c5d2;
+}
+
+.edit-post-visual-editor blockquote.block-editor-block-list__block { 
+    border-left: 1px solid #c1c5d2;
+    padding: 23px 75px;
+    font-size: 27px;
+    line-height: 1.5;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.edit-post-visual-editor blockquote.block-editor-block-list__block p { 
+	font-family: 'Montserrat',sans-serif;
+	font-size: 27px;
+    line-height: 1.5;
+    font-weight: 400;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.edit-post-visual-editor blockquote.block-editor-block-list__block p a { 
+	font-family: 'Montserrat',sans-serif;
+	font-size: 27px;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+.block-editor-block-list__layout table td {
+   border: 1px solid #c1c5d2; 
+}

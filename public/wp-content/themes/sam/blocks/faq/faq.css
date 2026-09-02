@@ -1,0 +1,59 @@
+.accordion__item:first-of-type {
+    border-top: 1px solid rgba(94,94,94,.2);
+}
+
+.accordion__item {
+    max-width: 100%;
+    border-bottom: 1px solid rgba(94,94,94,.2);
+}
+
+.accordion__item[open] {
+    padding-bottom: 30px;
+}
+
+.accordion__title {
+    font-family: 'Montserrat',sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 31px;
+    color: #000;
+    outline: 0;
+    cursor: pointer;
+    position: relative;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    list-style-type: none;
+}
+
+.accordion__content {
+    font-family: 'Montserrat',sans-serif;
+    font-size: 18px;
+    color: #333;
+    line-height: 26px;
+    font-weight: 500;
+}
+
+.accordion__item>.accordion__title:after {
+    position: absolute;
+    content: "";
+    width: 32px;
+    height: 32px;
+    background: url("/wp-content/themes/sam/img/cross.svg");
+    transform: rotate(0);
+    right: 15px;
+    transition: transform .4s;
+    top: 28px;
+    background-size: 100%;
+}
+
+.accordion__item[open]>.accordion__title:after {
+    display: block;
+    content:"";
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background: url("/wp-content/themes/sam/img/cross.svg");
+    right: 15px;
+    transform: rotate(-45deg);
+    background-size: 100%;
+}
